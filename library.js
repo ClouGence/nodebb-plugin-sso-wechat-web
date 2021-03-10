@@ -32,7 +32,7 @@ Wechat.getStrategy = function (strategies, callback) {
           appID: settings.id,
           appSecret: settings.secret,
           client: 'web',
-          callbackURL: nconf.get('url') + '/auth/wechat/callback',
+          callbackURL: nconf.get('httpsUrl') + '/auth/wechat/callback',
           state: '',
           scope: 'snsapi_login',
           passReqToCallback: true
