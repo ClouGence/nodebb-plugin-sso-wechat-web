@@ -122,14 +122,14 @@ Wechat.getAssociation = function (data, callback) {
     if (wxid) {
       data.associations.push({
         associated: true,
-        deauthUrl: nconf.get('url') + '/deauth/wechat',
+        deauthUrl: nconf.get('httpsUrl') + '/deauth/wechat',
         name: constants.name,
         icon: constants.admin.icon
       })
     } else {
       data.associations.push({
         associated: false,
-        url: nconf.get('url') + '/auth/wechat',
+        url: nconf.get('httpsUrl') + '/auth/wechat',
         name: constants.name,
         icon: constants.admin.icon
       })
@@ -293,7 +293,7 @@ Wechat.init = function (data, callback) {
 
   function renderAdmin (req, res) {
     res.render('admin/plugins/sso-wechat', {
-      callbackURL: nconf.get('url') + '/auth/wechat/callback'
+      callbackURL: nconf.get('httpsUrl') + '/auth/wechat/callback'
     })
   }
 
